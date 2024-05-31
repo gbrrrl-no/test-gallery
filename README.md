@@ -3,8 +3,9 @@
 
 ### Todo list
 
--[ ] Deploy this baby to Vercel
--[ ] Scaffold basic ui with mock data
+-[x] Deploy this baby to Vercel
+-[x] Scaffold basic ui with mock data
+-[ ] Tidy up build process
 -[ ] Setup database with Vercel Postgres
 -[ ] Add database to UI
 -[ ] Add image upload

@@ -1,82 +1,38 @@
 import Image from "next/image";
 
+const images = [
+  "https://utfs.io/f/207b4761-0de8-4e9b-b66d-1b06367d69a5-1xei68.JPG",
+  "https://utfs.io/f/25221642-4d29-4d9c-9304-a6b9a8362336-arhb0w.51.51.jpg",
+  "https://utfs.io/f/459be6b2-c82a-4c2e-9b59-6ed04478464c-v8utbe.jpg",
+  "https://utfs.io/f/554be2bd-192f-4c30-a3cc-57da263498c5-1xehkp.JPG",
+  "https://utfs.io/f/79a1e18f-fadd-49b1-90ce-ee296152649d-f04rk4.webp",
+  "https://utfs.io/f/11962448-74b7-4cfa-b1b0-ddc2a1f4b6ac-k455zb.jpg",
+  "https://utfs.io/f/2e6c15f4-46c1-4a81-8567-ddc31699a78c-mq5f7l.jpeg",
+  "https://utfs.io/f/7a1dcf12-26de-4c3f-8e86-10dae2f2fc38-4fdhty.png",
+  "https://utfs.io/f/bfa4892f-f31d-46c5-a375-b5bc122ed222-mxb5sh.jpg",
+  "https://utfs.io/f/42326f93-ebdd-45c1-81f9-e687b14ed13a-z3xod4.jpg",
+  "https://utfs.io/f/6880feae-bf09-451b-8bc0-b6c63ddaa671-z3xod8.jpg",
+];
+
+const mockedData = [...images, ...images, ...images, ...images, ...images, ...images].map(
+  (url, index) => ({
+    id: index + 1,
+    src: url,
+    title: `Image ${index + 1}`,
+  }),
+);
+
 export default function Home() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20">
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-center font-mono text-sm sm:text-left">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="rounded bg-black/[.05] px-1 py-0.5 font-semibold dark:bg-white/[.06]">
-              src/app/page.tsx
-            </code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            className="flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent bg-foreground px-4 text-sm text-background transition-colors hover:bg-[#383838] sm:h-12 sm:px-5 sm:text-base dark:hover:bg-[#ccc]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="flex h-10 items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/file-text.svg" alt="File icon" width={16} height={16} />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main className="">
+      <div className="flex flex-wrap gap-4">
+        {mockedData.map(item => (
+          <div key={item.id} className="w-64">
+            {/* <Image src={item.src} alt={item.title} width={300} height={150} layout="responsive" /> */}
+            <img src={item.src} className="h-40 w-96 rounded-lg object-cover" />
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
