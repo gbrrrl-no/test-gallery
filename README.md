@@ -5,8 +5,8 @@
 
 -[x] Deploy this baby to Vercel
 -[x] Scaffold basic ui with mock data
--[ ] Tidy up build process
--[ ] Setup database with Vercel Postgres
+-[x] Tidy up build process
+-[x] Setup database with Vercel Postgres
 -[ ] Add database to UI
 -[ ] Add image upload
 -[ ] Error management
