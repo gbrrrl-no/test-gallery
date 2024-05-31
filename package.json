@@ -6,10 +6,15 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@t3-oss/env-nextjs": "^0.10.1",
+    "@vercel/postgres": "^0.8.0",
     "babel-plugin-react-compiler": "0.0.0-experimental-487cb0e-20240529",
+    "drizzle-orm": "^0.31.0",
     "eslint-plugin-react-compiler": "0.0.0-experimental-a97cca1-20240529",
     "next": "15.0.0-rc.0",
     "react": "19.0.0-rc-f994737d14-20240522",
@@ -19,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "drizzle-kit": "^0.22.1",
     "eslint": "^8",
     "eslint-config-next": "15.0.0-rc.0",
     "eslint-config-prettier": "^9.1.0",
